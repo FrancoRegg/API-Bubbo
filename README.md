@@ -5,7 +5,7 @@ Este proyecto es una API para la gestión de tareas, puedes agregar una descripc
 
 ## Referencia de la API
 
-Para probar la API ---> `http://15.237.16.52//tasks` 
+Para probar la API ---> `http://15.237.16.52/tasks` 
 
 | Método | URL | Descripción |
 | ------ | --- | ----------- |
