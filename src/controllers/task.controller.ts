@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { handleHttp } from '../utils/error.handle';
 import { insertTask, showTasks, showTask, modifyTask, hideTask } from '../services/task.service';
 
-const getTasks = async (req: Request, res: Response) => {
+const getAllTasks = async (req: Request, res: Response) => {
     try {
         const response = await showTasks();
         res.send(response);
@@ -11,7 +11,7 @@ const getTasks = async (req: Request, res: Response) => {
     }
 };
 
-const getTask = async ({ params }: Request, res: Response) => {
+const getOneTask = async ({ params }: Request, res: Response) => {
     try {
         const { id } = params;
         const response = await showTask(id);
@@ -22,7 +22,7 @@ const getTask = async ({ params }: Request, res: Response) => {
     }
 };
 
-const updateTask = async ({ params, body }: Request, res: Response) => {
+const updateOneTask = async ({ params, body }: Request, res: Response) => {
     try {
         const { id } = params;
         const response = await modifyTask(id, body);
@@ -32,7 +32,7 @@ const updateTask = async ({ params, body }: Request, res: Response) => {
     }
 };
 
-const postTask = async (req: Request, res: Response) => {
+const createNewTask = async (req: Request, res: Response) => {
     try {
         const responseTask = await insertTask(req.body);
         res.send(responseTask);
@@ -41,7 +41,7 @@ const postTask = async (req: Request, res: Response) => {
     }
 };
 
-const deleteTask = async ({ params }: Request, res: Response) => {
+const deleteOneTask = async ({ params }: Request, res: Response) => {
     try {
         const { id } = params;
         const response = await hideTask(id);
@@ -51,4 +51,4 @@ const deleteTask = async ({ params }: Request, res: Response) => {
     }
 };
 
-export { getTasks, getTask, updateTask, postTask, deleteTask };
+export { getAllTasks, getOneTask, updateOneTask, createNewTask, deleteOneTask };
