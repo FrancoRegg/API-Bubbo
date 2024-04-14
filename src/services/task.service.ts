@@ -2,12 +2,10 @@ import { Task } from "../interfaces/task.interface"
 import TaskModel from "../models/task.model"
 
 const insertTask = async ( task:Task ) => {
-    console.log("tarea recibida:", task)
     try{
         const responseInsert = await TaskModel.create(task)
         return responseInsert
     }catch (error){
-        console.error("error al crear la tarea:", error)
         throw error
     }
 }
