@@ -12,5 +12,5 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(router)
 
-db().then(() => console.log("Connected to the database"))
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
+db().then(() => console.log("Conectado a la Base de Datos"))
+app.listen(PORT, () => console.log(`El servidor está escuchando en el puerto ${PORT}`))
