@@ -1,4 +1,4 @@
-import { Request, Response, Router } from 'express'
+import { Router } from 'express'
 import { getAllTasks, getOneTask, updateOneTask, createNewTask, deleteOneTask } from '../controllers/task.controller';
 import { logMiddleware } from '../middleware/log';
 
