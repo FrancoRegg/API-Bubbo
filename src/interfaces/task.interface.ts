@@ -1,5 +1,5 @@
 export interface Task {
     title: String;
     description: string;
-    status:'pending' | 'in progress' | 'done'
+    status:'pending' | 'in progress' | 'completed'
 }
