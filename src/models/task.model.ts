@@ -1,4 +1,4 @@
-import { Schema, Types, model, Model } from "mongoose";
+import { Schema, model } from "mongoose";
 import { Task } from "../interfaces/task.interface";
 
 const TaskSchema = new Schema<Task>(
