@@ -1,15 +1,6 @@
 import { Task } from "../interfaces/task.interface"
 import TaskModel from "../models/task.model"
 
-const insertTask = async ( task:Task ) => {
-    try{
-        const responseInsert = await TaskModel.create(task)
-        return responseInsert
-    }catch (error){
-        throw error
-    }
-}
-
 const showTasks = async () => {
     const responseTask = await TaskModel.find({})
     return responseTask
@@ -18,6 +9,15 @@ const showTasks = async () => {
 const showTask = async (id: string) =>{
     const responseTask = await TaskModel.findOne({ _id: id })
     return responseTask
+}
+
+const insertTask = async ( task:Task ) => {
+  try{
+      const responseInsert = await TaskModel.create(task)
+      return responseInsert
+  }catch (error){
+      throw error
+  }
 }
 
 const modifyTask = async (id: string, data: Task) =>{
